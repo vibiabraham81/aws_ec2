@@ -3,13 +3,21 @@ provider "aws" {
     region = var.region
 }
 
+terraform {
+  backend "s3" {
+    bucket   = "enterprise-allocation-s5a"
+    key            = "integration/terraform.tfstate"
+    region         = "us-east-1"
+    }
+}
+
 resource "aws_instance" "example" {
 ami = var.ami
 instance_type = var.instance_type
 
 
 root_block_device {
-    volume_size = "121212121212121212121212"
+    volume_size = "20"
   }
 tags = {
     application    = "size-scaling"
