@@ -10,7 +10,6 @@ instance_type = var.instance_type
 
 root_block_device {
     volume_size = "150"
-    volume_type = "gp2"
   }
 tags = {
     application    = "size-scaling"
