@@ -5,7 +5,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket   = "enterprise-allocation-s5a"
+    bucket   = "enterprise-allocation-2020"
     key            = "integration/terraform.tfstate"
     region         = "us-east-1"
     }
