@@ -1,11 +1,11 @@
 provider "aws" {
     version = "~> 2.70"
-    region = "us-east-1"
+    region = var.region
 }
 
 resource "aws_instance" "example" {
 ami = "ami-0947d2ba12ee1ff75"
-instance_type = "t2.micro"
+instance_type = var.instance_type
 
 tags = {
     application    = "size-scaling"
